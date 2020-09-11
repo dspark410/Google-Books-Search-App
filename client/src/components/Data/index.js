@@ -4,13 +4,16 @@ import API from "../../utils/API";
 
 export function Data(props) {
   function saveBooks(event) {
-  
-    // let authors= []
-    // authors.forEach(author => authors.push(author))
+
+    let authArray = []
+    let authors = event.author
+    authors.forEach(author => authArray.push(author))
+    
+    console.log (JSON.stringify(authArray))
 
     API.saveBook({
       title: event.title,
-      author: event.author[0],
+      author: authArray.toString(),
       synopsis: event.description,
       image: event.thumbnail,
       link: event.href,

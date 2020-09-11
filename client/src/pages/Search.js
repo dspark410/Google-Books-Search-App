@@ -62,7 +62,7 @@ function Search() {
               <tbody>
                 {booksResult.map((book) => (
                   <Data
-                    key={book.id}
+                    key={book.etag}
                     href={book.volumeInfo.previewLink}
                     thumbnail={!book.volumeInfo.imageLinks ? "https://via.placeholder.com/150" : book.volumeInfo.imageLinks.thumbnail}
                     title={book.volumeInfo.title}
